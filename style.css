@@ -1,0 +1,149 @@
+/* Importa a fonte Inter do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap');
+
+/* Redefine estilos para todos os elementos e a raiz do documento */
+*, :root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  /* Define a fonte principal como Inter */
+  font-family: 'Inter', sans-serif;
+
+  /* Propriedades para otimizar a renderização de texto */
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Define a cor de fundo da página */
+body {
+  background-color: #0F172A;
+}
+
+/* Define estilos para a área principal */
+main {
+  padding: 10px;
+  max-width: 648px;
+  margin: 0 auto 64px;
+}
+
+/* Define o layout da header como flexbox */
+header {
+  display: flex; /* Alinha o conteúdo lado a lado */
+  align-items: center; /* Alinha o conteúdo verticalmente */
+  justify-content: center; /* Alinha o conteúdo horizontalmente */
+  gap: 8px; /* Adiciona um espaçamento de 8px entre os elementos filhos */
+}
+
+/* Define estilos para a imagem dentro da header */
+header img {
+  margin-top: 5px;
+  max-width: 20%;
+}
+
+/* Define estilos para o título H1 dentro da header */
+header h1 {
+  font-size: 30px;
+  color: #F1F5F9;
+}
+
+#quiz {
+    counter-reset: quiz-item;
+}
+
+/* Define estilos para cada bloco de pergunta */
+.quiz-item {
+    margin-top: 24px; /* Adiciona margem superior de 24px */
+    border: 1px solid gray; /* Define borda cinza 1px */
+    border-radius: 6px; /* Arredonda cantos com 6px */
+  }
+  
+  /* Define estilos para o título de cada pergunta */
+  .quiz-item h3 {
+    padding: 16px 20px; /* Adiciona padding de 16px nas laterais e 20px em cima e em baixo */
+    color: #e2e3f0; /* Define a cor da fonte */
+  
+    display: flex; /* Organiza o conteúdo lado a lado */
+    align-items: center; /* Alinha verticalmente ao centro */
+    gap: 12px; /* Adiciona espaçamento de 12px entre os elementos filhos */
+  }
+  
+  /* Define estilos para o número que precede o título de cada pergunta */
+  .quiz-item h3::before {
+    counter-increment: quiz-item; /* Incrementa um contador para cada item de quiz */
+    content: counter(quiz-item); /* Exibe o valor do contador */
+  
+    background-color: #475569; /* Define a cor de fundo */
+    width: 30px;
+    height: 30px; /* Define largura e altura */
+    font-size: 10px; /* Define o tamanho da fonte */
+  
+    display: flex; /* Organiza o conteúdo lado a lado */
+    align-items: center; /* Alinha verticalmente ao centro */
+    justify-content: center; /* Alinha horizontalmente ao centro */
+    border-radius: 50%; /* Arredonda cantos */
+    flex-shrink: 0; /* Evita que o conteúdo se distorça dentro do flexbox */
+  }
+  
+  /* Define estilos para a área de respostas de cada pergunta */
+  .quiz-item dl {
+    padding: 20px 24px; /* Adiciona padding */
+    display: grid; /* Define layout como grid */
+    gap: 8px; /* Adiciona espaçamento entre elementos */
+    color: #e2e3f0; /* Define a cor da fonte */
+  }
+  
+  /* Define estilos para a pergunta dentro de cada resposta */
+  .quiz-item dl dt {
+    font-size: 14px; /* Define o tamanho da fonte */
+    line-height: 24px; /* Define a altura da linha */
+    letter-spacing: 0; /* Remove espaçamento entre letras */
+  
+    display: flex; /* Organiza o conteúdo lado a lado */
+    align-items: center; /* Alinha verticalmente ao centro */
+    gap: 8px; /* Adiciona espaçamento entre elementos filhos */
+  }
+  
+  /* Define estilos para os radio buttons */
+  input {
+    all: unset; /* Remove estilos padrão dos radio buttons */
+    border: 1px solid #94a3b8; /* Define borda cinza 1px */
+    width: 16px; /* Define largura */
+    height: 16px; /* Define altura */
+  
+    border-radius: 50%; /* Arredonda cantos */
+    display: flex; /* Organiza o conteúdo lado a lado */
+    align-items: center; /* Alinha verticalmente ao centro */
+    justify-content: center; /* Alinha horizontalmente ao centro */
+    flex-shrink: 0; /* Evita que o conteúdo se distorça dentro do flexbox */
+  }
+  
+  /* Define estilos para o radio button selecionado */
+  input:checked {
+    border: 1px solid #a3e635; /* Define borda verde 1px */
+  }
+  
+  /* Define estilos para o indicador de seleção do radio button */
+  input:checked::before {
+    content: " "; /* Insere um espaço para criar o indicador */
+    width: 10px; /* Define largura do indicador */
+    height: 10px; /* Define altura do indicador */
+  
+    background-color: #a3e635; /* Define cor de fundo verde */
+    border-radius: 50%; /* Arredonda cantos */
+  }
+  
+  /* Define estilos para a seção de acertos */
+  #acertos {
+    text-align: center; /* Alinha texto ao centro */
+    background-color: #a3e635; /* Define cor de fundo verde */
+
+    position: fixed; /* Faz a seção ficar fixa na parte inferior */
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Define largura do indicador*/
+    padding: 12px; 
+}
